@@ -2,6 +2,7 @@
 
 @theme {
   --color-*: initial;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 
   --color-flexoki-black: #100f0f;
   --color-flexoki-paper: #fffcf0;

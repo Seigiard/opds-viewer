@@ -1,7 +1,7 @@
 body {
   background-color: var(--color-bg);
   color: var(--color-tx);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   overflow: hidden;
 }
 
