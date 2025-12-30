@@ -1,18 +1,7 @@
-@import "tailwindcss";
-
-@theme {
-  --color-bg: #09090b;
-  --color-panel: #0f0f13;
-  --color-primary: #00f0ff;
-  --color-secondary: #ff00ff;
-  --color-text: #e0e0e0;
-  --color-dim: #52525b;
-}
-
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   overflow: hidden;
 }
 
