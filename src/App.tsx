@@ -485,9 +485,8 @@ export default function App() {
          {/* 2. CENTER PANE */}
          {/* Resizes on mobile to allow preview pane to show */}
          <TuiFrame 
-            title={pathString} 
-            isActive={true} 
-            borderColor="cyan" 
+            title={pathString}
+            isActive={true}
             className="shadow-[0_0_30px_rgba(0,0,0,0.5)] z-10 h-full bg-[#0a0a0a]"
          >
              {/* Back Button for Mobile */}
@@ -514,10 +513,10 @@ export default function App() {
 
          {/* 3. RIGHT PANE (PREVIEW) */}
          {/* Always visible, takes remaining space */}
-         <TuiFrame 
-            title={previewTitle} 
-            borderColor="magenta" 
-            className="min-w-0 h-full bg-zinc-950/80"
+         <TuiFrame
+            title={previewTitle}
+            className="border-[--color-secondary] min-w-0 h-full bg-zinc-950/80"
+            titleClassName="text-[--color-secondary]"
          >
             <PreviewPane 
                selectedNode={selectedNode} 
