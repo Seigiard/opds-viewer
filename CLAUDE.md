@@ -9,17 +9,8 @@ Default to using Bun instead of Node.js.
 ## Testing & Linting
 
 ```bash
-# Run tests (always in Docker - all tools available)
+# Run tests
 bun run test
-
-# Run unit tests only
-bun run test:unit
-
-# Run integration tests only
-bun run test:integration
-
-# Run tests with coverage
-bun run test:coverage
 
 # Lint (type-aware, run before commits)
 bun run lint
@@ -32,4 +23,3 @@ bun --bun tsc --noEmit
 ```
 
 **IMPORTANT**: Always run `bun run lint:fix` before committing changes.
-**NOTE**: Tests always run in Docker to ensure all tools (pdfinfo, 7zz, imagemagick) are available.
