@@ -475,7 +475,7 @@ export default function App() {
                nodes={fileSystem.nodes}
                currentFolderId={currentFolderId}
                parentFolderId={parentFolderId}
-               onSiblingClick={(id) => {
+               onSiblingClick={(_id) => {
                  // Just selecting sibling not fully implemented in logic, defaults to simple nav
                  handleNavigateUp(); 
                }}

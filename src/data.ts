@@ -1,7 +1,5 @@
 import { FileType, FileSystemState } from './types';
 
-const currentYear = new Date().getFullYear();
-
 // Helper to generate covers
 const getCover = (id: number) => `https://picsum.photos/300/400?random=${id}`;
 
