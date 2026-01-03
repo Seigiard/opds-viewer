@@ -128,6 +128,9 @@ export function Book({
         </label>
       </article>
       <div className="popup">
+        <label className="popup__close" htmlFor="popup-none">
+          <span className="sr-only">Close</span>
+        </label>
         <div className="popup__content">
           <div className="popup__cover" aria-hidden>
             <div className="book">

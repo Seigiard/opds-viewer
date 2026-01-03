@@ -369,8 +369,17 @@ body:has(.popup-trigger__wrapper input:checked) {
   }
 }
 
-.popup-trigger__wrapper:has(input:checked) .popup-trigger {
-  /* X close button via crossed diagonal gradients */
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  overflow: none;
+}
+
+.popup__close {
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -388,22 +397,25 @@ body:has(.popup-trigger__wrapper input:checked) {
     linear-gradient(45deg, transparent 42%, var(--color-text) 42%, var(--color-text) 58%, transparent 58%),
     linear-gradient(-45deg, transparent 42%, var(--color-text) 42%, var(--color-text) 58%, transparent 58%);
 
+  span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
   &:hover {
     transform: scale(1.1);
   }
 
-  &:has(:focus-visible) {
+  &:focus-visible {
     outline-color: var(--card-focus-ring);
   }
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: var(--color-bg);
-  overflow: none;
 }
 
 .popup-trigger__wrapper:has(input:checked) + .popup {
