@@ -122,7 +122,7 @@ export function Book({
           <h3 className="card__title">{title}</h3>
           {author && <p className="card__description">{author}</p>}
         </div>
-        <label className="popup-trigger" htmlFor={popupId}>
+        <label className="popup-trigger" htmlFor={popupId} tabIndex={0}>
           <input type="radio" name="popup" id={popupId} />
           <span className="sr-only">Open Book Details</span>
         </label>

@@ -369,7 +369,6 @@ body:has(.popup-trigger__wrapper input:checked) {
   }
 }
 
-
 .popup {
   display: none;
   position: fixed;
