@@ -8,7 +8,10 @@ export default {
   plugins: [
     postcssRandomFunction(),
     autoprefixer(),
-    postcssNesting(),
+    postcssNesting({
+      edition: "2021",
+      noIsPseudoSelector: true,
+    }),
     postcssPseudoClasses({
       restrictTo: ["focus", "hover"],
     }),
