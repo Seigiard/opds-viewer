@@ -66,7 +66,7 @@ export function Book({
   return (
     <div>
       <article {...props} className="card card--book popup-trigger__wrapper">
-        <div className="book book--animated" aria-hidden>
+        <div className="book" aria-hidden>
           <div className="book__cover">
             {cover ? <img src={cover} alt={title} loading="lazy" /> : <span>{title}</span>}
           </div>
