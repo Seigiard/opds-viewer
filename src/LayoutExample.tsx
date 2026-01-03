@@ -1,7 +1,13 @@
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef, useId } from "react";
 
 export function BooksGrid(props: ComponentPropsWithoutRef<"div">) {
-  return <div className="books-grid" {...props} />;
+  return (
+    <>
+      {/* Hidden radio for closing popups */}
+      <input type="radio" name="popup" id="popup-none" className="popup-reset" defaultChecked />
+      <div className="books-grid" {...props} />
+    </>
+  );
 }
 
 export function Folder({
@@ -55,6 +61,8 @@ export function Book({
   author?: string;
   description?: string;
 }) {
+  const popupId = useId();
+
   return (
     <div>
       <article {...props} className="card card--book popup-trigger__wrapper">
@@ -67,10 +75,9 @@ export function Book({
           <h3 className="card__title">{title}</h3>
           {author && <p className="card__description">{author}</p>}
         </div>
-        <label className="popup-trigger">
-          <input type="checkbox" name="open-popup" />
-          <span className="show">Open Book Details</span>
-          <span className="hide">Hide Book Details</span>
+        <label className="popup-trigger" htmlFor={popupId}>
+          <input type="radio" name="popup" id={popupId} />
+          <span className="sr-only">Open Book Details</span>
         </label>
       </article>
       <div className="popup">
