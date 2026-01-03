@@ -286,6 +286,7 @@ body {
   flex-direction: column;
   gap: 0.15rem;
   padding: 0 0.75rem;
+  min-width: 0;
 
   h3 {
     font-weight: 500;

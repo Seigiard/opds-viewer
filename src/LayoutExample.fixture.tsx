@@ -10,11 +10,11 @@ export default (
       description="The brilliant, bestselling, landmark novel that tells the story of the Buendia family."
     />
     <Book
-      cover="https://picsum.photos/seed/book2/200/300"
+      cover="https://picsum.photos/seed/book2/200/200"
       title="One Hundred Years of Solitude: A Novel of Epic Proportions"
       author="Gabriel Garcia Marquez"
     />
-    <Book cover="https://picsum.photos/seed/book3/200/300" title="Anonymous Tales" />
+    <Book cover="https://picsum.photos/seed/book3/200/500" title="Anonymous Tales" />
     <Book cover="https://picsum.photos/seed/book1/200/300" title="Pride and Prejudice" author="Jane Austen" />
   </BooksGrid>
 );
