@@ -1,17 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import "./tailwind.css";
-import App from "./App";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./styles/reset.css";
+import "./styles/index.css";
+import "./styles/variations.css";
 
-const rootElement = document.getElementById("root");
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
+createRoot(document.getElementById("root")!).render(<StrictMode></StrictMode>);
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+/*
+1. replace to div
+2. for folder h1 as a
+3. for book div has checkbox, h1 as label
+4. show popup
+*/
