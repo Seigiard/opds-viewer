@@ -1,5 +1,4 @@
-import { BooksGrid } from "./BooksGrid";
-import { Folder, Book } from "./GenericItem";
+import { BooksGrid, Folder, Book } from "./LayoutExample";
 
 export default (
   <BooksGrid>

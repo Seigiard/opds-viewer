@@ -1,5 +1,9 @@
 import { ComponentPropsWithoutRef } from "react";
 
+export function BooksGrid(props: ComponentPropsWithoutRef<"div">) {
+  return <div className="books-grid" {...props} />;
+}
+
 export function Folder({
   title,
   href,
