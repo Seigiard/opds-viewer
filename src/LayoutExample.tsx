@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, useId } from "react";
+import { ComponentPropsWithoutRef } from "react";
 
 export function Header({
   title,
@@ -48,13 +48,7 @@ export function Header({
 }
 
 export function BooksGrid(props: ComponentPropsWithoutRef<"div">) {
-  return (
-    <>
-      {/* Hidden radio for closing popups */}
-      <input type="radio" name="popup" id="popup-none" className="popup-reset" defaultChecked />
-      <div className="books-grid" {...props} />
-    </>
-  );
+  return <div className="books-grid" {...props} />;
 }
 
 export function Folder({
@@ -108,8 +102,6 @@ export function Book({
   author?: string;
   description?: string;
 }) {
-  const popupId = useId();
-
   return (
     <div>
       <article {...props} className="card card--book popup-trigger__wrapper">
@@ -122,15 +114,13 @@ export function Book({
           <h3 className="card__title">{title}</h3>
           {author && <p className="card__description">{author}</p>}
         </div>
-        <label className="popup-trigger" htmlFor={popupId} tabIndex={0}>
-          <input type="radio" name="popup" id={popupId} />
-          <span className="sr-only">Open Book Details</span>
+        <label className="popup-trigger">
+          <input type="checkbox" name="open-popup" />
+          <span className="show">Open Book Details</span>
+          <span className="hide">Hide Book Details</span>
         </label>
       </article>
       <div className="popup">
-        <label className="popup__close" htmlFor="popup-none">
-          <span className="sr-only">Close</span>
-        </label>
         <div className="popup__content">
           <div className="popup__cover" aria-hidden>
             <div className="book">
