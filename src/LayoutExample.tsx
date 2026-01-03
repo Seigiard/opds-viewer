@@ -1,5 +1,52 @@
 import { ComponentPropsWithoutRef, useId } from "react";
 
+export function Header({
+  title,
+  breadcrumb,
+  homeHref = "/",
+  showSearch = false,
+  searchPlaceholder = "Search...",
+  ...props
+}: ComponentPropsWithoutRef<"header"> & {
+  title?: string;
+  breadcrumb?: string;
+  homeHref?: string;
+  showSearch?: boolean;
+  searchPlaceholder?: string;
+}) {
+  return (
+    <header className="header" {...props}>
+      <div className="header__left">
+        <nav className="header__breadcrumb">
+          <a className="header__home" href={homeHref} aria-label="Home">
+            <svg className="header__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+          </a>
+          {breadcrumb && (
+            <>
+              <span className="header__separator" aria-hidden="true">
+                ›
+              </span>
+              <span className="header__breadcrumb-text">{breadcrumb}</span>
+            </>
+          )}
+        </nav>
+        {title && <h1 className="header__title">{title}</h1>}
+      </div>
+      {showSearch && (
+        <div className="header__search-wrapper">
+          <svg className="header__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" strokeWidth="2" />
+            <path d="m21 21-4.35-4.35" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+          <input type="search" className="header__search" placeholder={searchPlaceholder} />
+        </div>
+      )}
+    </header>
+  );
+}
+
 export function BooksGrid(props: ComponentPropsWithoutRef<"div">) {
   return (
     <>

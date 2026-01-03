@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/reset.css";
 import "./styles/index.css";
+import "./styles/header.css";
 import "./styles/variations.css";
 
 createRoot(document.getElementById("root")!).render(<StrictMode></StrictMode>);

@@ -1,4 +1,4 @@
 {
   "plugins": ["react-cosmos-plugin-vite"],
-  "globalImports": ["./src/styles/reset.css", "./src/styles/index.css", "./src/styles/variations.css"]
+  "globalImports": ["./src/styles/reset.css", "./src/styles/index.css", "./src/styles/variations.css", "./src/styles/header.css"]
 }
