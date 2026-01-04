@@ -31,6 +31,7 @@
     "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.23",
     "cssnano": "^7.1.2",
+    "oxfmt": "^0.21.0",
     "oxlint": "latest",
     "oxlint-tsgolint": "latest",
     "postcss": "^8.5.6",
