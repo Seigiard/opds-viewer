@@ -23,7 +23,6 @@
         "oxlint-tsgolint": "latest",
         "postcss": "^8.5.6",
         "postcss-nesting": "^13.0.2",
-        "postcss-pseudo-classes": "^0.4.0",
         "react-cosmos": "^7.1.0",
         "react-cosmos-plugin-vite": "^7.1.0",
         "typescript": "~5.8.3",
@@ -641,8 +640,6 @@
     "postcss-normalize-whitespace": ["postcss-normalize-whitespace@7.0.1", "", { "dependencies": { "postcss-value-parser": "^4.2.0" }, "peerDependencies": { "postcss": "^8.4.32" } }, "sha512-vsbgFHMFQrJBJKrUFJNZ2pgBeBkC2IvvoHjz1to0/0Xk7sII24T0qFOiJzG6Fu3zJoq/0yI4rKWi7WhApW+EFA=="],
 
     "postcss-ordered-values": ["postcss-ordered-values@7.0.2", "", { "dependencies": { "cssnano-utils": "^5.0.1", "postcss-value-parser": "^4.2.0" }, "peerDependencies": { "postcss": "^8.4.32" } }, "sha512-AMJjt1ECBffF7CEON/Y0rekRLS6KsePU6PRP08UqYW4UGFRnTXNrByUzYK1h8AC7UWTZdQ9O3Oq9kFIhm0SFEw=="],
-
-    "postcss-pseudo-classes": ["postcss-pseudo-classes@0.4.0", "", { "peerDependencies": { "postcss": "^8.0.0" } }, "sha512-k1MTMzMdBg3eW05QV/W3rZyuzOFJ3HU3AMbMamillv5G/5NuepHdMl6jO+6GHnjxH12/sNmBqdOI+zYIP86kZg=="],
 
     "postcss-reduce-initial": ["postcss-reduce-initial@7.0.5", "", { "dependencies": { "browserslist": "^4.27.0", "caniuse-api": "^3.0.0" }, "peerDependencies": { "postcss": "^8.4.32" } }, "sha512-RHagHLidG8hTZcnr4FpyMB2jtgd/OcyAazjMhoy5qmWJOx1uxKh4ntk0Pb46ajKM0rkf32lRH4C8c9qQiPR6IA=="],
 

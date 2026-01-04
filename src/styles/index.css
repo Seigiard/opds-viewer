@@ -245,38 +245,37 @@ body {
   transform-style: preserve-3d;
 }
 
-.card.card--book {
-  &:has(label:hover):not(:has(input:checked)) .book__cover {
-    box-shadow: var(--card-shadow);
-    transform: perspective(2000px) rotateY(-30deg);
-    transform-style: preserve-3d;
+@media (hover: hover) and (pointer: fine) {
+  .card.card--book {
+    &:has(label:hover):not(:has(input:checked)) .book__cover {
+      box-shadow: var(--card-shadow);
+      transform: perspective(2000px) rotateY(-30deg);
+      transform-style: preserve-3d;
+    }
+
+    &:has(label:hover) .book__cover:after {
+      opacity: 0.5;
+    }
   }
 
-  &:has(label:hover) .book__cover:after {
-    opacity: 0.5;
-  }
-
-  &:has(:focus-visible) .book__cover {
-    outline-color: var(--card-focus-ring);
+  .card.card--folder {
+    &:has(a:hover) {
+      .book:nth-child(3n + 1) {
+        --card-rotate-1: 6deg;
+      }
+      .book:nth-child(3n + 2) {
+        --card-rotate-2: -6deg;
+      }
+      .book:nth-child(3n + 3) {
+        --card-rotate-3: 1deg;
+      }
+    }
   }
 }
 
-.card.card--folder {
-  &:has(a:hover) {
-    .book:nth-child(3n + 1) {
-      --card-rotate-1: 6deg;
-    }
-    .book:nth-child(3n + 2) {
-      --card-rotate-2: -6deg;
-    }
-    .book:nth-child(3n + 3) {
-      --card-rotate-3: 1deg;
-    }
-  }
-
-  &:has(:focus-visible) .book:nth-child(3) .book__cover {
-    outline-color: var(--card-focus-ring);
-  }
+.card.card--book:has(:focus-visible) .book__cover,
+.card.card--folder:has(:focus-visible) .book:nth-child(3) .book__cover {
+  outline-color: var(--card-focus-ring);
 }
 
 .card__info {
@@ -373,12 +372,14 @@ body:has(.popup-trigger__wrapper input:checked) {
     linear-gradient(45deg, transparent 42%, var(--color-text) 42%, var(--color-text) 58%, transparent 58%),
     linear-gradient(-45deg, transparent 42%, var(--color-text) 42%, var(--color-text) 58%, transparent 58%);
 
-  &:hover {
-    transform: scale(1.1);
-  }
-
   &:has(:focus-visible) {
     outline-color: var(--card-focus-ring);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .popup-trigger__wrapper:has(input:checked) .popup-trigger:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -489,13 +490,15 @@ body:has(.popup-trigger__wrapper input:checked) {
     transform var(--transition-fast),
     outline-color var(--transition-fast);
 
-  &:hover {
-    background: color-mix(in srgb, var(--color-accent) 85%, black);
-    transform: translateY(-1px);
-  }
-
   &:focus-visible {
     outline-color: var(--color-accent);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .popup__download-btn:hover {
+    background: color-mix(in srgb, var(--color-accent) 85%, black);
+    transform: translateY(-1px);
   }
 }
 

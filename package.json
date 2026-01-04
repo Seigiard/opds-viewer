@@ -35,7 +35,6 @@
     "oxlint-tsgolint": "latest",
     "postcss": "^8.5.6",
     "postcss-nesting": "^13.0.2",
-    "postcss-pseudo-classes": "^0.4.0",
     "react-cosmos": "^7.1.0",
     "react-cosmos-plugin-vite": "^7.1.0",
     "typescript": "~5.8.3",
