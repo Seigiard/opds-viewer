@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef, useId } from "react";
 
 export function Header({
   title,
@@ -19,7 +19,13 @@ export function Header({
       <div className="header__left">
         <nav className="header__breadcrumb">
           <a className="header__home" href={homeHref} aria-label="Home">
-            <svg className="header__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="header__icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
             </svg>
           </a>
@@ -102,6 +108,7 @@ export function Book({
   author?: string;
   description?: string;
 }) {
+  const id = useId();
   return (
     <div>
       <article {...props} className="card card--book popup-trigger__wrapper">
@@ -115,9 +122,8 @@ export function Book({
           {author && <p className="card__description">{author}</p>}
         </div>
         <label className="popup-trigger">
-          <input type="checkbox" name="open-popup" />
+          <input type="checkbox" name="open-popup" id={`checkbox-${id}`} />
           <span className="show">Open Book Details</span>
-          <span className="hide">Hide Book Details</span>
         </label>
       </article>
       <div className="popup">
@@ -128,6 +134,9 @@ export function Book({
             </div>
           </div>
           <div className="popup__info">
+            <label tabindex="0" className="popup__close-button" for={`checkbox-${id}`}>
+              <span>Close</span>
+            </label>
             <hgroup>
               <h2 className="popup__title">{title}</h2>
               {author && <p className="popup__author">{author}</p>}
