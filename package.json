@@ -40,5 +40,8 @@
   },
   "lint-staged": {
     "*": "oxfmt --no-error-on-unmatched-pattern"
+  },
+  "knip": {
+    "ignoreDependencies": ["baseline-browser-mapping", "caniuse-lite"]
   }
 }
