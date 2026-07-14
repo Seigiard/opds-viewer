@@ -1,46 +1,42 @@
 {
-  "name": "neo-lib-tui-v.1",
-  "version": "0.0.0",
+  "name": "opds-viewer",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite",
-    "proxy": "bun proxy.ts",
+    "dev": "cosmos",
     "build": "bunx --bun vite build && bunx oxfmt ./dist/static/index.css",
     "preview": "bunx --bun vite preview",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
     "lint": "oxlint --type-aware",
     "lint:fix": "oxlint --type-aware --fix",
-    "cosmos": "cosmos",
     "cosmos-export": "cosmos-export"
   },
   "dependencies": {
-    "@reatom/core": "^1000.1.0",
-    "@reatom/react": "^1000.0.0",
-    "fast-xml-parser": "^5.3.3",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "baseline-browser-mapping": "^2.10.43",
+    "caniuse-lite": "^1.0.30001805",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@csstools/postcss-random-function": "^2.0.1",
     "@types/bun": "latest",
-    "@types/node": "^22.19.3",
-    "@types/react": "^19.2.7",
+    "@types/node": "^22.20.1",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "autoprefixer": "^10.4.23",
-    "cssnano": "^7.1.2",
+    "@vitejs/plugin-react": "^5.2.0",
+    "autoprefixer": "^10.5.2",
+    "cssnano": "^7.1.9",
     "oxfmt": "^0.21.0",
     "oxlint": "latest",
     "oxlint-tsgolint": "latest",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.19",
     "postcss-nesting": "^13.0.2",
-    "react-cosmos": "^7.1.0",
-    "react-cosmos-plugin-vite": "^7.1.0",
+    "react-cosmos": "^7.3.0",
+    "react-cosmos-plugin-vite": "^7.3.0",
     "typescript": "~5.8.3",
-    "vite": "^6.4.1",
-    "vite-plugin-static-copy": "^3.1.4"
+    "vite": "^6.4.3"
   },
   "lint-staged": {
     "*": "oxfmt --no-error-on-unmatched-pattern"
