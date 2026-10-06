@@ -1,6 +1,3 @@
-Use reatom state library. Always use context7 to get actual info about reatom@v1000.
-https://v1000.reatom.dev/_llms-txt/getting-started.txt
-
 ## Store-centered development
 
 Always keep shared stores in `src/store`
