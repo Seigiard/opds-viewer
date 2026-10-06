@@ -42,7 +42,13 @@ export function Header({
       </div>
       {showSearch && (
         <div className="header__search-wrapper">
-          <svg className="header__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <svg
+            className="header__search-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
             <circle cx="11" cy="11" r="8" strokeWidth="2" />
             <path d="m21 21-4.35-4.35" strokeWidth="2" strokeLinecap="round" />
           </svg>
@@ -109,6 +115,7 @@ export function Book({
   description?: string;
 }) {
   const id = useId();
+
   return (
     <div>
       <article {...props} className="card card--book popup-trigger__wrapper">
@@ -130,7 +137,9 @@ export function Book({
         <div className="popup__content">
           <div className="popup__cover" aria-hidden>
             <div className="book">
-              <div className="book__cover">{cover ? <img src={cover} alt={title} /> : <span>{title}</span>}</div>
+              <div className="book__cover">
+                {cover ? <img src={cover} alt={title} /> : <span>{title}</span>}
+              </div>
             </div>
           </div>
           <div className="popup__info">
