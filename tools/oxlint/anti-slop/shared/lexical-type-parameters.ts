@@ -2,6 +2,28 @@ import type { ESTree } from "@oxlint/plugins";
 
 type VisitorKeys = Readonly<Record<string, readonly string[]>>;
 
+/** Resolve a declared generic parameter by its nearest lexical declaration. */
+export function visibleTypeParameter(name: string, node: ESTree.Node, visitorKeys: VisitorKeys): ESTree.TSTypeParameter | null {
+	let descendant = node;
+	let current: ESTree.Node | null = node;
+	while (current !== null) {
+		if (current.type === "TSMappedType" && current.key.name === name &&
+			(descendant === current.nameType || descendant === current.typeAnnotation)) return null;
+		if (current.type === "TSConditionalType" && descendant === current.trueType) {
+			const inferred = new Set<string>();
+			collectInferTypeParameterNames(current.extendsType, visitorKeys, inferred);
+			if (inferred.has(name)) return null;
+		}
+		if ("typeParameters" in current) {
+			const parameter = current.typeParameters?.params.find((candidate) => candidate.name.name === name);
+			if (parameter !== undefined) return parameter;
+		}
+		descendant = current;
+		current = current.parent;
+	}
+	return null;
+}
+
 function isNode(value: unknown): value is ESTree.Node {
 	return (
 		typeof value === "object" &&
@@ -16,6 +38,12 @@ function collectInferTypeParameterNames(
 	visitorKeys: VisitorKeys,
 	names: Set<string>,
 ): void {
+	if (node.type === "TSConditionalType") {
+		collectInferTypeParameterNames(node.checkType, visitorKeys, names);
+		collectInferTypeParameterNames(node.trueType, visitorKeys, names);
+		collectInferTypeParameterNames(node.falseType, visitorKeys, names);
+		return;
+	}
 	if (node.type === "TSInferType") names.add(node.typeParameter.name.name);
 	const record = node as unknown as Readonly<Record<string, unknown>>;
 	for (const key of visitorKeys[node.type] ?? []) {

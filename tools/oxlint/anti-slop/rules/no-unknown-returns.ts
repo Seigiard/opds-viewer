@@ -4,6 +4,7 @@ import type { ESTree } from "@oxlint/plugins";
 
 import {
   createTypeAliasEnvironment,
+  hasVisibleTypeBinding,
   resolvedTypeMatches,
   type TypeAliasEnvironment,
 } from "../shared/type-alias-resolution.ts";
@@ -49,6 +50,8 @@ export const noUnknownReturnsRule = defineRule({
         ) {
           return false;
         }
+        // A global interface augmentation extends the built-in Promise rather than replacing it.
+        if (environment !== null && hasVisibleTypeBinding(resolved.typeName.name, resolved, environment, false, context.filename)) return false;
         const value = resolved.typeArguments?.params[0];
         return value !== undefined && matches(value);
       });
