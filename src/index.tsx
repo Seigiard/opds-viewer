@@ -8,7 +8,13 @@ import "./styles/variations.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Header title="My Collection" breadcrumb="Library" homeHref="/" showSearch searchPlaceholder="Search collection..." />
+    <Header
+      title="My Collection"
+      breadcrumb="Library"
+      homeHref="/"
+      showSearch
+      searchPlaceholder="Search collection..."
+    />
     <BooksGrid>
       <Folder title="Fiction" href="#" />
       <Folder title="Science Fiction" description="Explore the universe" href="#" />
@@ -18,7 +24,11 @@ createRoot(document.getElementById("root")!).render(
         description="The brilliant, bestselling, landmark novel that tells the story of the Buendia family."
       />
       <Book cover="https://picsum.photos/seed/book3/200/500" title="Anonymous Tales" />
-      <Book cover="https://picsum.photos/seed/book1/200/300" title="Pride and Prejudice" author="Jane Austen" />
+      <Book
+        cover="https://picsum.photos/seed/book1/200/300"
+        title="Pride and Prejudice"
+        author="Jane Austen"
+      />
     </BooksGrid>
   </StrictMode>,
 );
