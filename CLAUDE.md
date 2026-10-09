@@ -20,6 +20,11 @@ Default to using Bun instead of Node.js.
 
 ## Testing & Linting
 
+`bun install` installs Lefthook (`lefthook.yml`) in Git checkouts. Before commit,
+it formats staged files and runs type-aware Oxlint on staged code, then
+re-stages fixes. Vendored anti-slop rules are excluded. Installs without `.git`
+skip hook setup.
+
 ```bash
 # Run tests
 bun run test
