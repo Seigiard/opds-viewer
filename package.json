@@ -11,7 +11,8 @@
     "format:check": "oxfmt --check",
     "lint": "oxlint --type-aware",
     "lint:fix": "oxlint --type-aware --fix",
-    "cosmos-export": "cosmos-export"
+    "cosmos-export": "cosmos-export",
+    "prepare": "if [ -e .git ]; then lefthook install; fi"
   },
   "dependencies": {
     "baseline-browser-mapping": "^2.10.43",
@@ -29,6 +30,7 @@
     "@vitejs/plugin-react": "^5.2.0",
     "autoprefixer": "^10.5.2",
     "cssnano": "^7.1.9",
+    "lefthook": "2.2.1",
     "oxfmt": "^0.21.0",
     "oxlint": "1.87.0",
     "oxlint-tsgolint": "7.0.2003",
@@ -38,9 +40,6 @@
     "react-cosmos-plugin-vite": "^7.3.0",
     "typescript": "~5.8.3",
     "vite": "^6.4.3"
-  },
-  "lint-staged": {
-    "*": "oxfmt --no-error-on-unmatched-pattern"
   },
   "knip": {
     "ignoreDependencies": [
